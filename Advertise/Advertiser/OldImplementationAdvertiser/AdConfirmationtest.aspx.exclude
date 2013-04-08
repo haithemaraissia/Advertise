@@ -1,0 +1,124 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Plain.master" AutoEventWireup="true" CodeFile="AdConfirmationtest.aspx.cs" Inherits="Admanagment.Advertiser.AdConfirmation" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <table style="width: 100%;">
+        <tr>
+            <td>
+                <div class="uiHeader uiHeaderWithImage uiHeaderPage">
+                    <div class="clearfix uiHeaderTop">
+                        <div>
+                            <h2 class="uiHeaderTitle" tabindex="0">
+                                Review Ad</h2>
+                        </div>
+                    </div>
+                </div>
+                <p class="subtitle">
+                    Please review your ad for accuracy. Your ad&#39;s audience includes users under the 
+                    age of 18. It will be reviewed prior to being published.</p>
+                <div class="preview_review_container clearfix">
+                    <dl class="editorset clearfix ad_detail">
+                        <dt>Ad Preview: </dt>
+                        <dd>
+                            <div class="UIAdCreative_Preview">
+                                <div class="fbEmuPreview">
+                                    <div class="fbEmuEgoUnit">
+                                        <div id="1-id_4fe0ed58343d70533871298" class="fbAdUnit" 
+                                            data-ad="{&quot;adid&quot;:1,&quot;segment&quot;:&quot;market&quot;}">
+                                            <div class="fbEmu fbEmuEgo">
+                                                <div class="title">
+                                                    <a class="forceLTR fbEmuLink" 
+                                                        onclick="new ContextualDialogX().init(HTML(&quot;\u003Cdiv class=\&quot;pam\&quot;&gt;\u003Cdiv class=\&quot;mbs fwb\&quot;&gt;Linkable Area\u003C\/div&gt;Users who click this area will link to the destination specified by this ad. \u003Ca target=\&quot;_blank\&quot; href=\&quot;https:\/\/www.facebook.com\/pages\/Haithem-Araissiacom\/303807799656438?sk=timeline\&quot;&gt;Preview link\u003C\/a&gt;.\u003C\/div&gt;&quot;)).setWidth(300).setContext(this).enableBehavior(LayerHideOnBlur).disableBehavior(LayerDestroyOnHide).show();">
+                                                    Haithem-Araissia.com</a></div>
+                                                <div class="adInfo">
+                                                    <a class="identity fbEmuLink" 
+                                                        onclick="new ContextualDialogX().init(HTML(&quot;\u003Cdiv class=\&quot;pam\&quot;&gt;\u003Cdiv class=\&quot;mbs fwb\&quot;&gt;Linkable Area\u003C\/div&gt;Users who click this area will link to the destination specified by this ad. \u003Ca target=\&quot;_blank\&quot; href=\&quot;https:\/\/www.facebook.com\/pages\/Haithem-Araissiacom\/303807799656438?sk=timeline\&quot;&gt;Preview link\u003C\/a&gt;.\u003C\/div&gt;&quot;)).setWidth(300).setContext(this).enableBehavior(LayerHideOnBlur).disableBehavior(LayerDestroyOnHide).show();">
+                                                    </a>
+                                                </div>
+                                                <div class="clearfix uiImageBlock image_body_block">
+                                                    <a class="fbEmuLink image fbEmuImage uiImageBlockImage uiImageBlockMediumImage lfloat" 
+                                                        onclick="new ContextualDialogX().init(HTML(&quot;\u003Cdiv class=\&quot;pam\&quot;&gt;\u003Cdiv class=\&quot;mbs fwb\&quot;&gt;Linkable Area\u003C\/div&gt;Users who click this area will link to the destination specified by this ad. \u003Ca target=\&quot;_blank\&quot; href=\&quot;https:\/\/www.facebook.com\/pages\/Haithem-Araissiacom\/303807799656438?sk=timeline\&quot;&gt;Preview link\u003C\/a&gt;.\u003C\/div&gt;&quot;)).setWidth(300).setContext(this).enableBehavior(LayerHideOnBlur).disableBehavior(LayerDestroyOnHide).show();">
+                                                    <img alt="" class="img" 
+                                                        src="https://fbcdn-photos-a.akamaihd.net/photos-ak-snc1/v565063/flyers/22/46/13401408871524275828_1_c99c8dbe.jpg" /></a><div 
+                                                        class="uiImageBlockContent ">
+                                                        <div class="body">
+                                                            <a class="forceLTR fbEmuLink" 
+                                                                onclick="new ContextualDialogX().init(HTML(&quot;\u003Cdiv class=\&quot;pam\&quot;&gt;\u003Cdiv class=\&quot;mbs fwb\&quot;&gt;Linkable Area\u003C\/div&gt;Users who click this area will link to the destination specified by this ad. \u003Ca target=\&quot;_blank\&quot; href=\&quot;https:\/\/www.facebook.com\/pages\/Haithem-Araissiacom\/303807799656438?sk=timeline\&quot;&gt;Preview link\u003C\/a&gt;.\u003C\/div&gt;&quot;)).setWidth(300).setContext(this).enableBehavior(LayerHideOnBlur).disableBehavior(LayerDestroyOnHide).show();">
+                                                            Haithem Araissia Portfolio: CSS AND FLASH Demonstration of the different 
+                                                            products and</a></div>
+                                                    </div>
+                                                </div>
+                                                <div class="inline">
+                                                    <div class="action">
+                                                        <span class="fbEmuContext">You like this.</span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl class="editorset clearfix ad_detail">
+                        <dt>Ad Name:</dt>
+                        <dd>
+                            <input id="suggested_name" class="inputtext" maxlength="100" 
+                                name="suggested_name" type="text" value="My Ad" /></dd>
+                        <dt>Audience:</dt>
+                        <dd>
+                            <div id="targeting_sentence">
+                                This ad targets users:<ul class="targeting_lines">
+                                    <li>who live in the United States</li>
+                                </ul>
+                            </div>
+                        </dd>
+                        <dt>Campaign:</dt>
+                        <dd>
+                            New Campaign (New Campaign)</dd>
+                        <dt>Bid Type:</dt>
+                        <dd>
+                            Optimized CPM</dd>
+                        <dt>Bid:</dt>
+                        <dd>
+                            Auto</dd>
+                        <dt>Daily Budget:</dt>
+                        <dd>
+                            $10.00&nbsp;USD per day</dd>
+                        <dt>Duration:</dt>
+                        <dd>
+                            06/19/2012 4:21pm to 07/19/2012 4:21pm Pacific Time</dd>
+                    </dl>
+                </div>
+                <div class="submit_order">
+                    <a class="uiButton uiButtonConfirm uiButtonLarge" 
+                        href="https://secure.facebook.com/ads/create/review_ad.php?act=2330631355013&amp;oid=433679729997145&amp;ncf=860340#" 
+                        name="create_submit" 
+                        onclick="require(&quot;AdManagerFunding&quot;).addCredential(&quot;create_flow&quot;, &quot;123097351040126&quot;, &quot;2330631355013&quot;, &quot;&quot;);" 
+                        role="button"><span class="uiButtonText">Place Order</span></a><a 
+                        class="uiButton uiButtonLarge" 
+                        href="https://www.facebook.com/ads/create/index.php?act=2330631355013&amp;oid=433679729997145&amp;ncf=860340&amp;review_ad=1" 
+                        role="button"><span class="uiButtonText">Edit Ad</span></a></div>
+            </td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+    </table>
+</asp:Content>

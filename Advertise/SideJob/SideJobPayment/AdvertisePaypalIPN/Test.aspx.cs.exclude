@@ -1,0 +1,55 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data.Entity;
+
+
+public partial class IPN_Test : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        
+        using (var context = new  AdDatabaseModel.AdDatabase())
+        {
+            try
+            {
+
+                var result2 = from c in context.AdvertiserPaymentDues
+                              where c.AdvertiserID == 100 && c.AdID == 50 && c.PaymentDue == 145.35
+                              select c.AdID;
+                var resultQuery2 = result2.FirstOrDefault();
+
+                //var result = from c in context.AdvertiserSuccessfulIPNs
+                //             where c.TransactionId == ""
+                //             select c.IPNID;
+
+                //      var resultQuery = result.FirstOrDefault();
+                //      if (resultQuery == null)
+                //      {
+                //          //TransactionID doesn't Exist In IPN
+                //      }
+
+                //  //int AdID = (int.Parse(pdt.Custom));
+                //  //      var result2 = from c in context.AdGenerals
+                //  //                    where c.AdID == AdID
+                //  //                    select c.UserID;
+                //  //      Guid userID = Guid.Parse(result2.FirstOrDefault().ToString());
+                //  //      var result = from c in context.AdvertiserSuccessfulPDTs
+                //  //                   where (c.AdID == AdID && c.AdvertiserID == userID && c.GrossTotal.Equals(pdt.GrossTotal) && c.CurrencyCode == pdt.Currency)
+                //  //                   select c.TransactionId;
+                //  //      var resultQuery = result.FirstOrDefault();
+                //  //      if (resultQuery == null)
+             
+            }
+            catch (Exception)
+            {
+                    
+                throw;
+            }
+           
+        }
+    }
+}

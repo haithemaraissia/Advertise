@@ -1,0 +1,155 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ReviewAdTest.aspx.cs" Inherits="Admanagment.Advertiser.ReviewAdTest" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+    
+        <div id="pagelet_bluebar" data-referrer="pagelet_bluebar">
+            <div id="blueBarHolder" class="slim">
+                <div id="blueBar" class="fixed_elem">
+                    <div id="pagelet_top_nav" data-referrer="pagelet_top_nav">
+                        <div id="pageHead" class="clearfix" role="banner">
+                            <h1 id="pageLogo" class="pixelSnapped">
+                                <a href="https://www.facebook.com/?ref=logo" title="Home"></a>
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="-cx-PRIVATE-fbLayout__root">
+            <div id="globalContainer" class="uiContextualLayerParent">
+                <div id="content" class="fb_content clearfix">
+                    <div class="UIStandardFrame_Container clearfix">
+                        <div class="UIStandardFrame_Content">
+                            <div class="review_ad">
+                                <div class="uiHeader uiHeaderWithImage uiHeaderPage">
+                                    <div class="clearfix uiHeaderTop">
+                                        <div class="rfloat">
+                                            <h2 class="accessible_elem">
+                                                Review Ad</h2>
+                                            <a class="uiHeaderActions" 
+                                                href="https://www.facebook.com/help/?page=195623423828629" target="_blank">
+                                            Help Center</a></div>
+                                        <div>
+                                            <h2 aria-hidden="true" class="uiHeaderTitle" tabindex="0">
+                                                <i class="uiHeaderImage img sp_bcz1kw sx_a81cb1"></i>Review Ad</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="subtitle">
+                                    Please review your ad for accuracy. Your ad&#39;s audience includes users under the 
+                                    age of 18. It will be reviewed prior to being published.</p>
+                                <div class="preview_review_container clearfix">
+                                    <dl class="editorset clearfix ad_detail">
+                                        <dt>Ad Preview: </dt>
+                                        <dd>
+                                            <div class="UIAdCreative_Preview">
+                                                <div class="fbEmuPreview">
+                                                    <div class="fbEmuEgoUnit">
+                                                        <div id="1-id_500eeca2268dc6d37445852" class="fbAdUnit" 
+                                                            data-ad="{&quot;adid&quot;:1,&quot;segment&quot;:&quot;market&quot;}">
+                                                            <div class="fbEmu fbEmuEgo">
+                                                                <div class="title">
+                                                                    <a class="forceLTR fbEmuLink" 
+                                                                        onclick="new ContextualDialogX().init(HTML(&quot;\u003Cdiv class=\&quot;pam\&quot;&gt;\u003Cdiv class=\&quot;mbs fwb\&quot;&gt;Linkable Area\u003C\/div&gt;Users who click this area will link to the destination specified by this ad. \u003Ca target=\&quot;_blank\&quot; href=\&quot;https:\/\/www.facebook.com\/pages\/Haithem-Araissiacom\/303807799656438?sk=timeline\&quot;&gt;Preview link\u003C\/a&gt;.\u003C\/div&gt;&quot;)).setWidth(300).setContext(this).enableBehavior(LayerHideOnBlur).disableBehavior(LayerDestroyOnHide).show();">
+                                                                    Haithem-Araissia.com</a></div>
+                                                                <div class="adInfo">
+                                                                    <a class="identity fbEmuLink" 
+                                                                        onclick="new ContextualDialogX().init(HTML(&quot;\u003Cdiv class=\&quot;pam\&quot;&gt;\u003Cdiv class=\&quot;mbs fwb\&quot;&gt;Linkable Area\u003C\/div&gt;Users who click this area will link to the destination specified by this ad. \u003Ca target=\&quot;_blank\&quot; href=\&quot;https:\/\/www.facebook.com\/pages\/Haithem-Araissiacom\/303807799656438?sk=timeline\&quot;&gt;Preview link\u003C\/a&gt;.\u003C\/div&gt;&quot;)).setWidth(300).setContext(this).enableBehavior(LayerHideOnBlur).disableBehavior(LayerDestroyOnHide).show();">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="clearfix image_body_block">
+                                                                    <a class="fbEmuLink image fbEmuImage -cx-PRIVATE-uiImageBlock__image -cx-PRIVATE-uiImageBlock__mediumImage lfloat" 
+                                                                        onclick="new ContextualDialogX().init(HTML(&quot;\u003Cdiv class=\&quot;pam\&quot;&gt;\u003Cdiv class=\&quot;mbs fwb\&quot;&gt;Linkable Area\u003C\/div&gt;Users who click this area will link to the destination specified by this ad. \u003Ca target=\&quot;_blank\&quot; href=\&quot;https:\/\/www.facebook.com\/pages\/Haithem-Araissiacom\/303807799656438?sk=timeline\&quot;&gt;Preview link\u003C\/a&gt;.\u003C\/div&gt;&quot;)).setWidth(300).setContext(this).enableBehavior(LayerHideOnBlur).disableBehavior(LayerDestroyOnHide).show();">
+                                                                    <img alt="" class="img" 
+                                                                        src="https://fbcdn-photos-a.akamaihd.net/photos-ak-snc1/v565063/flyers/22/46/13401408871524275828_1_c99c8dbe.jpg" /></a><div 
+                                                                        class="-cx-PRIVATE-uiImageBlock__content ">
+                                                                        <div class="body">
+                                                                            <a class="forceLTR fbEmuLink" 
+                                                                                onclick="new ContextualDialogX().init(HTML(&quot;\u003Cdiv class=\&quot;pam\&quot;&gt;\u003Cdiv class=\&quot;mbs fwb\&quot;&gt;Linkable Area\u003C\/div&gt;Users who click this area will link to the destination specified by this ad. \u003Ca target=\&quot;_blank\&quot; href=\&quot;https:\/\/www.facebook.com\/pages\/Haithem-Araissiacom\/303807799656438?sk=timeline\&quot;&gt;Preview link\u003C\/a&gt;.\u003C\/div&gt;&quot;)).setWidth(300).setContext(this).enableBehavior(LayerHideOnBlur).disableBehavior(LayerDestroyOnHide).show();">
+                                                                            Haithem Araissia Portfolio: CSS AND FLASH Demonstration of the different 
+                                                                            products and</a></div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="inline">
+                                                                    <div class="action">
+                                                                        <span class="fbEmuContext">You like this.</span></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </dd>
+                                    </dl>
+                                    <dl class="editorset clearfix ad_detail">
+                                        <dt>Ad Name:</dt>
+                                        <dd>
+                                            <input id="suggested_name" class="inputtext" maxlength="100" 
+                                                name="suggested_name" type="text" value="My Ad" /></dd>
+                                        <dt>Audience:</dt>
+                                        <dd>
+                                            <div id="targeting_sentence">
+                                                This ad targets users:<ul class="targeting_lines">
+                                                    <li>who live in the United States</li>
+                                                </ul>
+                                            </div>
+                                        </dd>
+                                        <dt>Campaign:</dt>
+                                        <dd>
+                                            New Campaign (New Campaign)</dd>
+                                        <dt>Bid Type:</dt>
+                                        <dd>
+                                            Optimized CPM</dd>
+                                        <dt>Bid:</dt>
+                                        <dd>
+                                            Auto</dd>
+                                        <dt>Daily Budget:</dt>
+                                        <dd>
+                                            $10.00&nbsp;USD per day</dd>
+                                        <dt>Duration:</dt>
+                                        <dd>
+                                            This ad campaign will run indefinitely</dd>
+                                    </dl>
+                                </div>
+                                <div class="submit_order">
+                                    <a class="uiButton uiButtonConfirm uiButtonLarge" 
+                                        href="https://secure.facebook.com/ads/create/review_ad.php?act=2330631355013&amp;oid=263267783783504&amp;ncf=5278310#" 
+                                        name="create_submit" 
+                                        onclick="require(&quot;AdManagerFunding&quot;).addCredential(&quot;create_flow&quot;, &quot;123097351040126&quot;, &quot;2330631355013&quot;, &quot;&quot;);" 
+                                        role="button"><span class="uiButtonText">Place Order</span></a><a 
+                                        class="uiButton uiButtonLarge" 
+                                        href="https://www.facebook.com/ads/create/index.php?act=2330631355013&amp;oid=263267783783504&amp;ncf=5278310&amp;review_ad=1" 
+                                        role="button"><span class="uiButtonText">Edit Ad</span></a><div 
+                                        class="ads_terms_and_conditions">
+                                        By clicking the &quot;Place Order&quot; button, I agree to the
+                                        <a href="https://www.facebook.com/legal/terms" target="_blank">Facebook 
+                                        Statement of Rights and Responsibilities</a> including my obligation to comply 
+                                        with the <a href="https://www.facebook.com/ad_guidelines.php" target="_blank">
+                                        Facebook Advertising Guidelines</a>. I understand that failure to comply with 
+                                        the Terms and Conditions and the Advertising Guidelines may result in a variety 
+                                        of consequences, including the cancellation of any advertisements I have placed, 
+                                        and termination of my account. I understand that if I am resident or have my 
+                                        principal place of business in the US or Canada, I am contracting solely with 
+                                        Facebook, Inc. Otherwise I am contracting solely with Facebook Ireland Limited.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="UIStandardFrame_SidebarAds">
+                            &nbsp;</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+    </form>
+</body>
+</html>

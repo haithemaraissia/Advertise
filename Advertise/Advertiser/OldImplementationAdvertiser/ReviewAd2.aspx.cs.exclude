@@ -1,0 +1,92 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data.Linq;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace Admanagment.Advertiser
+{
+    public partial class ReviewAd : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!Page.IsPostBack)
+            {
+                GetAdProperties();
+            }
+
+        }
+
+        private void BannerKeywords()
+        {
+
+            ///////////////////YOU WILL NEED TO ADJUST FOR TIME OVER HERE WHERE TIME START AND TIME FINISH//////////////////
+            /// and Country and maybe even region /// 
+
+            // Dim AdKeyword as new adDatabaseDataSetTableAdapters
+            var adListKeywordAdapter = new AdDatabaseDataSetTableAdapters.AdListTableAdapter();
+            var adListKeyworDataTable = new AdDatabaseDataSet.AdListDataTable();
+            adListKeywordAdapter.FillByKeyword(adListKeyworDataTable, "Test");
+
+            if (adListKeyworDataTable.Rows.Count == 0)
+            {
+                BannerRotator1.KeywordFilter = "Home";
+            }
+
+            //Dim CustomerContractDescriptionAdapter As New ContractDataSetTableAdapters.ContractDescriptionTableAdapter
+            //Dim CustomerContractDescriptionTable As New ContractDataSet.ContractDescriptionDataTable
+            //CustomerContractDescriptionAdapter.FillContractDescription(CustomerContractDescriptionTable, _language.ToString())
+            //BannerRotator1.KeywordFilter = "Home";
+            //BannerRotator2.KeywordFilter = "Doctor";
+        }
+
+        protected void AdRotator1AdCreated(object sender, AdCreatedEventArgs e)
+        {
+
+            //Change NavigateUrl to redirect page
+            e.NavigateUrl = "~/Advertiser/TempAdHandler.ashx?id=" + e.AdProperties["ID"];
+
+        }
+
+        protected void GetAdProperties()
+        {
+            var x = Request.QueryString["ID"];
+            //int y =  int.Parse(Request.QueryString["ID"]);
+            int y = 27;
+            using (var context2 =
+                new AdDatabaseModel.AdDatabaseEntities())
+            {
+                var adList = (from ad in context2.TempAds
+                              where ad.ID == y
+                              select ad).ToList();
+                LanguageTextBox.Text = Helpers.Utility.GetLanguageNameByID(adList[0].LanguageID);
+                GenderDropDownList.SelectedIndex = adList[0].GenderID;
+                AgeDropDownList.SelectedIndex = adList[0].AgeRangeID;
+                CountryDropDownList.SelectedIndex = adList[0].CountryID;
+
+                //RegionDropDownList.SelectedItem.Value = adList[0].Region;
+                //CityDropDownList.SelectedIndex = adList[0].City;
+
+
+                ZipcodeLabel.Text = adList[0].Zipcode;
+                IndustryDropDownList.SelectedIndex = adList[0].IndustryID;
+                ProfessionTextBox.Text = adList[0].Profession;
+
+                //DateTime
+              //  HiddenToField.Value = adList[0].StartDate.ToShortDateString();
+                HiddenToField.Value = "hello";
+            }
+
+
+
+
+        }
+
+        protected int GetTempAdID()
+        {
+            return int.Parse(Request.QueryString["ID"]);
+        }
+    }
+}

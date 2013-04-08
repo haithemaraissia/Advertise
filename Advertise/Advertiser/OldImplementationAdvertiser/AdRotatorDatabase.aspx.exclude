@@ -1,0 +1,22 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Plain.master" AutoEventWireup="true" CodeFile="AdRotatorDatabase.aspx.cs" Inherits="AdManagment.AdRotatorDatabase" %>
+<%@ Register Assembly="AdControl" Namespace="AdControl" TagPrefix="BannerRotator" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <div>
+
+    <BannerRotator:BannerRotator
+        id="AdRotator1"
+        DataSourceID="srcAds"
+        Runat="server" />
+
+    <asp:SqlDataSource
+        id="srcAds"
+        ConnectionString="<%$ ConnectionStrings:AdDatabaseConnectionString1 %>"
+        SelectCommand="SELECT [ImageUrl], [Width], [Height], [NavigateUrl], [AlternateText], [Keyword], [Impressions] FROM [AdList]"
+        Runat="server" />
+        
+            <asp:HyperLink ID="BackToHomeHyperLink" runat="server" 
+        NavigateUrl="~/Advertiser/Home.aspx">Back</asp:HyperLink>
+    </div>
+</asp:Content>

@@ -1,0 +1,51 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace Admanagment.Advertiser
+{
+    public partial class AjaxAdRotatorKeywordTrack : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            BannerKeywords();
+        }
+
+        private void BannerKeywords()
+        {
+            BannerRotator1.KeywordFilter = "Site,Position,5,Language";
+            //BannerRotator2.KeywordFilter = "Doctor";
+        }
+
+        protected void AdRotator1AdCreated(object sender, AdCreatedEventArgs e)
+        {
+            // Update Impressions
+            SqlDataSource1.InsertParameters["AdId"].DefaultValue = e.AdProperties["Id"].ToString();
+            SqlDataSource1.Insert();
+
+            //Change NavigateUrl to redirect page
+            e.NavigateUrl = "~/Advertiser/AdHandler.ashx?id=" + e.AdProperties["Id"].ToString();
+
+        }
+
+        protected void AdRotator2AdCreated(object sender, AdCreatedEventArgs e)
+        {
+            // Update Impressions
+            SqlDataSource2.InsertParameters["AdId"].DefaultValue = e.AdProperties["Id"].ToString();
+            SqlDataSource2.Insert();
+
+            //Change NavigateUrl to redirect page
+            e.NavigateUrl = "~/Advertiser/AdHandler.ashx?id=" + e.AdProperties["Id"].ToString();
+        }
+
+        //protected void OnTimerTick(object sender, EventArgs e)
+        //{
+        //    UpdatePanel1.Update();
+        //}
+
+
+    }
+}

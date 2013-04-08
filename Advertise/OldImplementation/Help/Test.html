@@ -1,0 +1,36 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<html lang="en">
+<head>
+    <title>Nivo Slider Demo</title>
+    <link rel="stylesheet" href="Styles/themes/default/default.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="Styles/themes/light/light.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="Styles/themes/dark/dark.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="Styles/themes/bar/bar.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="Styles/nivo-slider.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="Styles/NivoSliderPage.css" type="text/css" media="screen" />
+</head>
+<body>
+    <div id="wrapper">
+        <div class="slider-wrapper theme-default" >
+            <div id="slider" class="nivoSlider">
+                <img src="images/NivoSlider/toystory.jpg" data-thumb="images/NivoSlider/toystory.jpg" alt="" />
+                <a href="http://dev7studios.com"><img src="images/NivoSlider/up.jpg" data-thumb="images/NivoSlider/up.jpg" alt="" title="This is an example of a caption" /></a>
+                <img src="images/NivoSlider/walle.jpg" data-thumb="images/NivoSlider/walle.jpg" alt="" data-transition="slideInLeft" />
+                <img src="images/NivoSlider/nemo.jpg" data-thumb="images/NivoSlider/nemo.jpg" alt="" title="#htmlcaption" />
+            </div>
+            <div id="htmlcaption" class="nivo-html-caption">
+                <strong>This</strong> is an example of a <em>HTML</em> caption with <a href="#">a link</a>. 
+            </div>
+        </div>
+
+    </div>
+    <script type="text/javascript" src="Scripts/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="Scripts/jquery.nivo.slider.js"></script>
+    <script type="text/javascript">
+        $(window).load(function () {
+            $('#slider').nivoSlider();
+        });
+    </script>
+</body>
+</html>

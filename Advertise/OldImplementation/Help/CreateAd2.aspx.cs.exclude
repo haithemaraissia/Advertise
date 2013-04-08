@@ -1,0 +1,101 @@
+﻿using System;
+using System.Globalization;
+using System.Threading;
+using System.Web.Security;
+using System.Web.UI.HtmlControls;
+
+namespace Admanagment
+{
+    public partial class CreateAd : System.Web.UI.Page
+    {
+        protected override void InitializeCulture()
+        {
+            string lang = Request.QueryString["l"];
+            if (lang != null | !string.IsNullOrEmpty(lang))
+            {
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(lang);
+                Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(lang);
+                Session["LCID"] = Helpers.Utility.GetLCID(lang);
+            }
+            else
+            {
+                if (Session["LCID"] != null)
+                {
+                    Thread.CurrentThread.CurrentUICulture =
+                        new CultureInfo(Helpers.Utility.GetLanguage(Convert.ToInt32(Session["LCID"])));
+                    Thread.CurrentThread.CurrentCulture =
+                        CultureInfo.CreateSpecificCulture(Helpers.Utility.GetLanguage(Convert.ToInt32(Session["LCID"])));
+                }
+            }
+
+        }
+
+        protected void SEOSiteMap()
+        {
+            Page.Title = Resources.Resource.HomeTitle;
+
+            var nl1 = new System.Web.UI.WebControls.Literal {Text = Environment.NewLine};
+            var title = new HtmlMeta {Name = "title", Content = Resources.Resource.HomeTitle};
+            Page.Header.Controls.AddAt(1, title);
+
+            var description = new HtmlMeta {Name = "description", Content = Resources.Resource.HomeDescription};
+            Page.Header.Controls.AddAt(2, description);
+
+            var keywords = new HtmlMeta {Name = "keywords", Content = Resources.Resource.HomeKeywords};
+            Page.Header.Controls.AddAt(3, keywords);
+        }
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            SEOSiteMap();
+            if (Session["LCID"] == null)
+            {
+                Session["LCID"] = 1;
+            }
+
+
+        }
+
+        protected void InsertNewTempAd(Guid userID)
+        {
+            using (var context2 = new AdDatabaseEntities())
+
+                context2.AddTempAd(Helpers.Utility.GetTempAdID(),2, 3, 4, "Http://www.google.com", 3,
+                                   "imageurl", "text", "Home", 200, 300, 100,
+                                   Convert.ToDateTime(DateTime.Now.ToString(CultureInfo.InvariantCulture)),
+                                   Convert.ToDateTime(DateTime.Now.ToString(CultureInfo.InvariantCulture)),
+                                   userID, 1, 2, 3, 256, "usa", 128, "OverlandPark", null, null, "zipcode", 300,
+                                   4, "Painter,Mechanic,doctor,eletrician",
+                                   Convert.ToDateTime(DateTime.Now.ToString(CultureInfo.InvariantCulture)),
+                                   "adName", 3, "US", Helpers.Utility.GetFlagPath(256), "5,15,20,74");
+
+
+        }
+
+
+
+        protected void CreateAdButtonClick(object sender, EventArgs e)
+        {
+            // IF Page is Valid && User is Log In Then
+            //InsertNewTempAd()
+
+
+            MembershipUser user = Membership.GetUser();
+            if (user != null)
+            {
+                var userKey = user.ProviderUserKey;
+
+                if (userKey != null)
+                {
+                    var userID = (Guid)userKey;
+                    InsertNewTempAd(userID);
+                }
+            }
+            else
+            {
+                //get the user to login
+                var t = "df";
+            }
+        }
+    }
+}

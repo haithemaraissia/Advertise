@@ -1,0 +1,127 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Plain.master" AutoEventWireup="true"
+    CodeFile="EditAd2.aspx.cs" Inherits="Admanagment.Advertiser.EditAd" %>
+
+<%@ Register TagPrefix="BannerRotator" Namespace="AdControl" Assembly="AdControl" %>
+<%@ Register TagPrefix="asp" Namespace="AjaxControlToolkit" Assembly="AjaxControlToolkit" %>
+<%@ Register TagPrefix="cc1" Namespace="AjaxControlToolkit" Assembly="AjaxControlToolkit" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <asp:ToolkitScriptManager ID="ScriptManager1" runat="server">
+    </asp:ToolkitScriptManager>
+    <asp:Panel ID="WatchListPanel" runat="server" Height="649px" Style="position: relative;
+        overflow: hidden; top: 0px;" BackColor="White">
+        <asp:UpdatePanel ID="WatchListUpdatePanel" runat="server">
+            <ContentTemplate>
+                <asp:Label ID="WatchListLabel" runat="server" BackColor="#414952" Font-Bold="True"
+                    Height="20px" Style="position: relative" Text="<%$ Resources:Resource, WatchListLabel %>"
+                    Width="100%" ForeColor="White"></asp:Label>
+                <%--<asp:GridView ID="WatchListGridView" runat="server" AutoGenerateColumns="False" DataSourceID="dsdetails"
+                    CellPadding="4" ForeColor="#333333" GridLines="None"
+                    HorizontalAlign="Center" 
+                    AllowPaging="True" AllowSorting="True" PageSize="23" Width="100%">
+                    <EmptyDataRowStyle BackColor="#414952" HorizontalAlign="Center" VerticalAlign="Top"
+                        BorderStyle="None" BorderWidth="0px" />
+                    <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                    <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#4F5A64" ForeColor="White" HorizontalAlign="Center" VerticalAlign="Middle" />
+                    <SelectedRowStyle ForeColor="#708090" BorderColor="#708090" BorderWidth="2px" Font-Bold="True" />
+                    <HeaderStyle BackColor="#4F5A64" Font-Bold="True" ForeColor="White" HorizontalAlign="Center"
+                        CssClass="gridHeader" />
+                    <EditRowStyle BackColor="#999999" />
+                    <AlternatingRowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                    <EmptyDataTemplate>
+                        <asp:Label ID="EmptyWatchListProject" runat="server" Height="20px" Style="text-align: center"
+                            Text="<%$ Resources:Resource, EmptyWatchListProject %>" Width="100%" BackColor="#4F5A64"
+                            ForeColor="White" Font-Bold="true"></asp:Label></EmptyDataTemplate>
+                </asp:GridView>--%>
+                <asp:GridView runat="server" ID="GridView1" DataSourceID="dsdetails" AllowPaging="True"
+                    Width="840px" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="ID"
+                    CellPadding="4" ForeColor="#333333" GridLines="None" Style="text-align: center"
+                    OnRowDataBound="GridView1_RowDataBound" 
+                    onselectedindexchanged="GridView1_SelectedIndexChanged">
+                    <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                    <EditRowStyle BackColor="#999999" />
+                    <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+                    <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" Height="10px" ForeColor="White"
+                        CssClass="gridHeader" HorizontalAlign="Center" />
+                    <Columns>
+                        <asp:BoundField DataField="ID" HeaderText="ID" SortExpression="ID" InsertVisible="False"
+                            ReadOnly="True" />
+                        <asp:BoundField DataField="AdName" HeaderText="AdName" SortExpression="AdName" />
+                        <asp:BoundField DataField="StartDate" HeaderText="StartDate" SortExpression="StartDate"
+                            DataFormatString="{0:MM/dd/yyyy}" HtmlEncode="false" />
+                        <asp:BoundField DataField="EndDate" HeaderText="EndDate" SortExpression="EndDate"
+                            DataFormatString="{0:MM/dd/yyyy}" HtmlEncode="false" />
+                        <asp:CheckBoxField DataField="IsActive" HeaderText="IsActive" SortExpression="IsActive" />
+                        <asp:BoundField DataField="TotalClick" HeaderText="TotalClick" SortExpression="TotalClick" />
+                        <asp:BoundField DataField="TotalImpression" HeaderText="TotalImpression" SortExpression="TotalImpression" />
+                        <asp:TemplateField>
+                            <ItemTemplate>
+                                <BannerRotator:FlashControl ID="FlashControl1" runat="server" ViewStateMode="Enabled"
+                                    FlashUrl='<%# Eval("ImageUrl", "{0}") %>' Width="150px" Height="150px" />
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:CommandField ShowSelectButton="True" ButtonType="Button" />
+                    </Columns>
+                    <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                    <SortedAscendingCellStyle BackColor="#E9E7E2" />
+                    <SortedAscendingHeaderStyle BackColor="#506C8C" />
+                    <SortedDescendingCellStyle BackColor="#FFFDF8" />
+                    <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+                </asp:GridView>
+                <asp:ObjectDataSource ID="WatchListObjectDataSource" runat="server" OldValuesParameterFormatString="original_{0}"
+                    SelectMethod="GetCustomerWatchList" TypeName="CustomerWatchListDataSetTableAdapters.GetCustomerWatchListTableAdapter">
+                    <SelectParameters>
+                        <asp:SessionParameter Name="CustomerID" SessionField="Customerid" Type="Int32" />
+                        <asp:SessionParameter Name="LCID" SessionField="Language" Type="Int32" />
+                    </SelectParameters>
+                </asp:ObjectDataSource>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+        <cc1:RoundedCornersExtender ID="WatchListRoundedCornersExtender" runat="server" TargetControlID="WatchListPanel"
+            Color="SlateGray" Radius="9" Enabled="True" BorderColor="SlateGray">
+        </cc1:RoundedCornersExtender>
+    </asp:Panel>
+        <hr />
+    <hr />
+
+    <hr />
+    <asp:Label ID="Test" runat="server"></asp:Label>
+    <hr />
+    <hr />
+    hejjuugjgh
+
+    <hr />
+    <asp:GridView runat="server" ID="gvdetails" DataSourceID="dsdetails" AllowPaging="True"
+        Width="830px" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="ID"
+        CellPadding="4" ForeColor="#333333" GridLines="None" Style="text-align: center">
+        <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+        <EditRowStyle BackColor="#999999" />
+        <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+        <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+        <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" Height="10px" ForeColor="White"
+            CssClass="gridHeader" HorizontalAlign="Center" />
+        <Columns>
+            <asp:BoundField DataField="ID" HeaderText="ID" SortExpression="ID" InsertVisible="False"
+                ReadOnly="True" />
+            <asp:BoundField DataField="ImageUrl" HeaderText="ImageUrl" SortExpression="ImageUrl" />
+            <asp:BoundField DataField="Impressions" HeaderText="Impressions" SortExpression="Impressions" />
+            <asp:BoundField DataField="StartDate" HeaderText="StartDate" SortExpression="StartDate" />
+            <asp:BoundField DataField="EndDate" HeaderText="EndDate" SortExpression="EndDate" />
+            <asp:CheckBoxField DataField="IsActive" HeaderText="IsActive" SortExpression="IsActive" />
+            <asp:BoundField DataField="TotalClick" HeaderText="TotalClick" SortExpression="TotalClick" />
+            <asp:BoundField DataField="AdName" HeaderText="AdName" SortExpression="AdName" />
+            <asp:BoundField DataField="TotalImpression" HeaderText="TotalImpression" SortExpression="TotalImpression" />
+        </Columns>
+        <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+        <SortedAscendingCellStyle BackColor="#E9E7E2" />
+        <SortedAscendingHeaderStyle BackColor="#506C8C" />
+        <SortedDescendingCellStyle BackColor="#FFFDF8" />
+        <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+    </asp:GridView>
+    <asp:SqlDataSource ID="dsdetails" runat="server" ConnectionString="<%$ ConnectionStrings:AdDatabaseConnectionString1 %>"
+        SelectCommand="SELECT AdGeneral.ID, AdGeneral.ImageUrl, AdGeneral.Impressions, AdGeneral.StartDate, AdGeneral.EndDate, AdGeneral.IsActive, AdTotalStats.TotalClick, AdGeneral.AdName, AdTotalStats.TotalImpression FROM AdGeneral INNER JOIN AdTotalStats ON AdGeneral.AdID = AdTotalStats.id">
+    </asp:SqlDataSource>
+</asp:Content>

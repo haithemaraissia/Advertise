@@ -1,0 +1,49 @@
+default
+Home
+utility
+createad
+changead //movement too
+adentity/sidejob , utility, the other class inside the app_code folder
+ReviewAd
+ReviewAd2
+test
+
+
+
+To do:
+Nivoslider
+Static function
+remove Adtype because we don't need it
+
+*********Make sure to move the utility and entity data model to the app_code Folder
+--THEN TRY EXLUDING Test.WEb dll and you will have to fix the problems
+
+-Copy the entity framework.dll
+I'm currently working on the Advertise solution
+
+
+
+Create Ad
+Continue with the flash class to get the widht and height.
+http://jayakrishnagudla.blogspot.com/2009/12/how-to-get-width-and-height-of-swf-file.html#
+One transaltion for the select file upload.
+-Clean the code 
+-Think Logic
+Review Ad and Change Ad and cleanning up the solution should be the main focus.
+In addition, think about these procedure : update creative, delete creative from temp and full Ad
+
+
+
+Files: Make Sure to change the Codefile to codebehind for the solution
+Default
+CreateNewWizardCustom
+bin dll
+App_code Folder for all file movement and change
+Advertiser folder:
+ChangeAd
+CreateAd
+EditAd
+ReviewAd
+ReviewAd2
+
+

@@ -1,0 +1,117 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site2.Master.cs" Inherits="AdManagment.SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Language" content="en">
+    <title>MyTitle</title> 
+    <link rel="canonical" href="http://gravatar.com/beau">
+    <link rel="shortcut icon" href="http://en.gravatar.com/favicon.ico">
+    <link href="Styles/Site.css" rel="stylesheet" type="text/css"  media="screen" />
+    <script src="Scripts/jquery-1.4.1.js" type="text/javascript"></script>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="wrap">
+        <div id="header">
+            <div class="middle">
+                <h1>
+                    <a href="http://en.gravatar.com/" title="Home">Gravatar.com</a></h1>
+                    
+                <ul id="menu">
+                    <li id="welcome">Howdy, <a href="http://en.gravatar.com/jackjack123" title="Go to your Profile">
+                        jackjack123</a>!</li>
+                    <li class="menupop"><a href="http://en.gravatar.com/emails/" class="submenu_link">My
+                        Account</a>
+                        <ul class="submenu">
+                            <li><a href="http://en.gravatar.com/emails/">Manage My Gravatars</a></li>
+                            <li><a href="http://en.gravatar.com/profiles/edit/?noclose">Edit My Profile</a></li>
+                            <li><a href="http://en.gravatar.com/jackjack123">View My Profile</a></li>
+                            <li><a href="http://en.gravatar.com/emails/new/">Add an Email Address</a></li>
+                            <li><a href="http://en.gravatar.com/gravatars/new/">Add an Image</a></li>
+                            <li><a href="http://en.gravatar.com/account/change-password/">Change Password</a></li>
+                            <li><a href="http://en.gravatar.com/site/logout/">Log Out</a></li>
+                        </ul>
+                    </li>
+                    <li class="menupop" id="help"><a href="http://en.gravatar.com/site/faq/" class="submenu_link">
+                        Help</a>
+                        <ul class="submenu">
+                            <li><a href="http://en.gravatar.com/">About Gravatar</a></li>
+                            <li><a href="http://en.gravatar.com/site/faq/">Common Questions</a></li>
+                            <li><a href="http://en.gravatar.com/site/implement/">Developer Resources</a></li>
+                            <li><a href="http://blog.gravatar.com/">Read Our Blog</a></li>
+                            <li><a href="http://automattic.com/privacy/">Privacy Policy</a></li>
+                            <li><a href="http://en.gravatar.com/site/terms-of-service/">Terms of Service</a></li>
+                            <li><a href="http://en.gravatar.com/site/abuse/">Report Abuse</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <script type="text/javascript">
+                    jQuery(document).ready(function () {
+                        jQuery('a.submenu_link').hover(function (i) {
+                            jQuery('a.submenu_link').parent().removeClass('open');
+                            jQuery(this).parent().addClass('open');
+                        });
+                        jQuery('li.menupop').hover(function () { }, function () {
+                            jQuery(this).removeClass('open');
+                        });
+                    });
+</script>
+<div class="loginDisplay">
+                <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                    <AnonymousTemplate>
+                        [ <a href="~/Account/Login.aspx" ID="HeadLoginStatus" runat="server">Log In</a> ]
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                        Welcome <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>!
+                        [ <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out" LogoutPageUrl="~/"/> ]
+                    </LoggedInTemplate>
+                </asp:LoginView>
+            </div>
+            </div>
+        </div>
+        <div id="main">
+            <div class="middle">
+                <div class="box-top">
+                </div>
+                <div class="box">
+                     <asp:ContentPlaceHolder id="MainContent" runat="server">
+    </asp:ContentPlaceHolder>
+                  <!--  <div id="content" class="profile">
+                        <div class="vcard grofile">
+                            <div class="column-left">  Column Left
+                            </div>
+                            <div class="column-right">  Column Right  
+                            </div>
+                            <p class="clear">
+                            </p>
+                        </div>
+                    </div>-->
+                    <span class="clear"></span>
+                </div>
+                <div class="box-bottom">
+                </div>
+                <span class="clear"></span>
+            </div>
+            <span class="clear"></span>
+        </div>
+        <div id="footer">
+            <div class="middle">
+                <ul id="footer-nav">
+                    <li><a href="http://en.gravatar.com/site/implement/">Developers</a></li>
+                    <li><a href="http://automattic.com/privacy/">Privacy Policy</a></li>
+                    <li><a href="http://en.gravatar.com/">About</a></li>
+                    <li><a href="http://en.gravatar.com/site/translations/">Languages</a></li>
+                </ul>
+                <a href="http://automattic.com/" id="automattic_joint" style="text-decoration: none">
+                    An <span>Automattic</span> Invention</a>
+            </div>
+        </div>
+        <span class="clear"></span>
+    </div>
+    </form>
+</body>
+</html>
